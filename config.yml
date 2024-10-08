@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main # O branch que você está usando
+
+media_folder: "static/images" # O diretório onde suas imagens serão armazenadas
+public_folder: "/images"
+
+collections:
+  - name: "posts" # Nome da coleção
+    label: "Posts" # Rótulo para a coleção
+    folder: "content/posts" # Diretório onde os arquivos markdown serão salvos
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "text" }
